@@ -1,36 +1,56 @@
 // list of all questions, choices, and answers
 var questions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
-    },
-    {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
-    },
-    {
-      title: "Arrays in JavaScript can be used to store ____.",
+      title: "What are variables used for in JavaScript Programs?:",
       choices: [
-        "numbers and strings",
-        "other arrays",
-        "booleans",
-        "all of the above"
+        "Storing numbers, dates, or other values", 
+        "Varying randomly", 
+        "Causing high-school algebra flashbacks", 
+        "None of the above"
       ],
-      answer: "all of the above"
+      answer: "Storing numbers, dates, or other values"
+    },
+    {
+      title: " _____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.",
+      choices: [
+        "Client-side", 
+        "Server-side", 
+        "Local", 
+        "Native"
+      ],
+      answer: "Client-side"
+    },
+    {
+      title: "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
+      choices: [
+        "<SCRIPT>",
+        "<BODY>",
+        "<HEAD>",
+        "<TITLE>"
+      ],
+      answer: "<SCRIPT>"
     },
     {
       title:
-        "String values must be enclosed within ____ when being assigned to variables.",
-      choices: ["commas", "curly brackets", "quotes", "parentheses"],
-      answer: "quotes"
+        "Inside which HTML element do we put the JavaScript?",
+      choices: [
+        "<js>", 
+        "<scripting>", 
+        "<script>", 
+        "<javascript>"
+      ],
+      answer: "<script>"
     },
     {
       title:
-        "A very useful tool used during development and debugging for printing content to the debugger is:",
-      choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
-      answer: "console.log"
-    }
+        "Using _______ statement is how you test for a specific condition.",
+      choices: [
+        "Select", 
+        "If", 
+        "Switch", 
+        "For"
+      ],
+      answer: "If"
+    },
   ];
   

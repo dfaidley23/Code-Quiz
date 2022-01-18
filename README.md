@@ -22,9 +22,13 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```
 
 ## Credits
-List your collaborators, if any, with links to their GitHub profiles.
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-If you followed tutorials, include links to those here as well.
+Credits for the help during this project go to the follwoing:
+- http://mcqspdfs.blogspot.com/2013/08/60-top-javascript-multiple-choice.html
+- My Tutor
+- The DU Staff
+- W3 Schools
+- MDN
+- Stackoverflow
 
 ## How to Contribute
 If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
