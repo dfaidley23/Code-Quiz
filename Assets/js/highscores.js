@@ -1,4 +1,4 @@
-function Highscores() {
+function highscores() {
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
     highscores.sort(function (a, b) {
         return b.score - a.score;
@@ -19,4 +19,4 @@ function clearHighscores() {
 
 document.getElementById("clear").onclick = clearHighscores;
 
-Highscores();
+highscores();

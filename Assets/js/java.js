@@ -4,7 +4,7 @@ var choicesEl = document.getElementById("choices");
 var submitBtn = document.getElementById("submit");
 var startBtn = document.getElementById("start");
 var initialsEl = document.getElementById("initials");
-var feedbackEl = document.getElementById("feedback");
+var responseEl = document.getElementById("response");
 var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
@@ -42,13 +42,13 @@ function questionClick() {
       time = 0;
     }
     timerEl.textContent = time;
-    feedbackEl.textContent = "Wrong!";
+    responseEl.textContent = "Wrong!";
   } else {
-    feedbackEl.textContent = "Correct!";
+    responseEl.textContent = "Correct!";
   }
-  feedbackEl.setAttribute("class", "feedback");
+  responseEl.setAttribute("class", "response");
   setTimeout(function() {
-    feedbackEl.setAttribute("class", "feedback hide");
+    responseEl.setAttribute("class", "response hide");
   }, 1000);
   currentQuestionIndex++;
   if (currentQuestionIndex === questions.length) {
