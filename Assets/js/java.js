@@ -62,7 +62,7 @@ function quizEnd() {
   clearInterval(timerId);
   var endScreenEl = document.getElementById("end-screen");
   endScreenEl.removeAttribute("class");
-  var finalScoreEl = document.getElementById("final-score");
+  var finalScoreEl = document.getElementById("your-score");
   finalScoreEl.textContent = time;
   questionsEl.setAttribute("class", "hide");
 }
@@ -98,7 +98,5 @@ function checkForEnter(event) {
 }
 
 submitBtn.onclick = saveHighscore;
-
 startBtn.onclick = start;
-
 initialsEl.onkeyup = checkForEnter;
