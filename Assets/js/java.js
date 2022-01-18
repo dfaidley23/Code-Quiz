@@ -10,7 +10,7 @@ var time = questions.length * 15;
 var timerId;
 
 
-function startQuiz() {
+function start() {
   var startScreenEl = document.getElementById("start-screen");
   startScreenEl.setAttribute("class", "hide");
   questionsEl.removeAttribute("class");
@@ -99,6 +99,6 @@ function checkForEnter(event) {
 
 submitBtn.onclick = saveHighscore;
 
-startBtn.onclick = startQuiz;
+startBtn.onclick = start;
 
 initialsEl.onkeyup = checkForEnter;

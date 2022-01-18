@@ -1,4 +1,3 @@
-// list of all questions, choices, and answers
 var questions = [
     {
       title: "What are variables used for in JavaScript Programs?:",
@@ -53,4 +52,3 @@ var questions = [
       answer: "If"
     },
   ];
-  
