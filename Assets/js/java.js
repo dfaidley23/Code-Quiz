@@ -1,3 +1,4 @@
+// global variables
 var questionsEl = document.getElementById("questions");
 var timerEl = document.getElementById("time");
 var choicesEl = document.getElementById("choices");
@@ -6,43 +7,45 @@ var startBtn = document.getElementById("start");
 var initialsEl = document.getElementById("initials");
 var responseEl = document.getElementById("response");
 var currentQuestionIndex = 0;
-var time = questions.length * 15;
-var timerId;
+var time = questions.length * 20;
+var timer;
 
-
+// a function needed to call the app start and set a time interval for the timer
 function start() {
-  var startScreenEl = document.getElementById("start-screen");
-  startScreenEl.setAttribute("class", "hide");
+  var startEl = document.getElementById("start-screen");
+  startEl.setAttribute("class", "hide");
   questionsEl.removeAttribute("class");
-  timerId = setInterval(clockTick, 1000);
-  timerEl.textContent = time;
+  timer = setInterval(clockTick, 1000);
 
-  getQuestion();
+  // need to call the function for the questions
+  getQuestions();
 }
 
-function getQuestion() {
+function getQuestions() {
   var currentQuestion = questions[currentQuestionIndex];
   var titleEl = document.getElementById("question-title");
   titleEl.textContent = currentQuestion.title;
   choicesEl.innerHTML = "";
-  currentQuestion.choices.forEach(function(choice, i) {
-    var choiceNode = document.createElement("button");
-    choiceNode.setAttribute("class", "choice");
-    choiceNode.setAttribute("value", choice);
-    choiceNode.textContent = i + 1 + ". " + choice;
-    choiceNode.onclick = questionClick;
-    choicesEl.appendChild(choiceNode);
+
+  // need a function to give each question the proper selection and display criteria
+  currentQuestion.choices.forEach(function(selection, i) {
+    var choiceQ = document.createElement("button");
+    choiceQ.setAttribute("class", "selection");
+    choiceQ.setAttribute("value", selection);
+    choiceQ.textContent = i + 1 + ". " + selection;
+    choiceQ.onclick = questionClick;
+    choicesEl.appendChild(choiceQ);
   });
 }
 
 function questionClick() {
   if (this.value !== questions[currentQuestionIndex].answer) {
-    time -= 15;
+    time -= 20;
     if (time < 0) {
       time = 0;
     }
     timerEl.textContent = time;
-    responseEl.textContent = "Wrong!";
+    responseEl.textContent = "Incorrect!";
   } else {
     responseEl.textContent = "Correct!";
   }
@@ -54,12 +57,13 @@ function questionClick() {
   if (currentQuestionIndex === questions.length) {
     quizEnd();
   } else {
-    getQuestion();
+    getQuestions();
   }
 }
 
+// needed a function for the final results being displayed along with the score
 function quizEnd() {
-  clearInterval(timerId);
+  clearInterval(timer);
   var endScreenEl = document.getElementById("end-screen");
   endScreenEl.removeAttribute("class");
   var finalScoreEl = document.getElementById("your-score");
@@ -67,6 +71,7 @@ function quizEnd() {
   questionsEl.setAttribute("class", "hide");
 }
 
+// a function to set my timer and call the function if the time runs out to end the quiz
 function clockTick() {
   time--;
   timerEl.textContent = time;

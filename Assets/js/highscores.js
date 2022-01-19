@@ -1,9 +1,7 @@
 function highscores() {
+    // will store all scores in the array as individual items
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
-    highscores.sort(function (a, b) {
-        return b.score - a.score;
-    });
-
+    // will grab each item in the array and attach it to a li item and then append that item to the parent element
     highscores.forEach(function (score) {
         var liTag = document.createElement("li");
         liTag.textContent = score.initials + " - " + score.score;
@@ -12,6 +10,7 @@ function highscores() {
     });
 }
 
+// a function needed to reset the highscores if requested
 function clearHighscores() {
     window.localStorage.removeItem("highscores");
     window.location.reload();
