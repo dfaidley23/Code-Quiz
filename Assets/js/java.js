@@ -1,31 +1,32 @@
 // global variables
-var questionsEl = document.getElementById("questions");
-var timerEl = document.getElementById("time");
-var choicesEl = document.getElementById("choices");
-var submitBtn = document.getElementById("submit");
-var startBtn = document.getElementById("start");
-var initialsEl = document.getElementById("initials");
-var responseEl = document.getElementById("response");
+var questionsElement = document.getElementById("questions");
+var timerElement = document.getElementById("time");
+var choicesElement = document.getElementById("choices");
+var submitButton = document.getElementById("submit");
+var startButton = document.getElementById("start");
+var initialsElement = document.getElementById("initials");
+var responseElement = document.getElementById("response");
 var currentQuestionIndex = 0;
-var time = questions.length * 20;
+var time = questions.length * 15;
 var timer;
 
 // a function needed to call the app start and set a time interval for the timer
 function start() {
-  var startEl = document.getElementById("start-screen");
-  startEl.setAttribute("class", "hide");
-  questionsEl.removeAttribute("class");
-  timer = setInterval(clockTick, 1000);
+  var startElement = document.getElementById("start-screen");
+  startElement.setAttribute("class", "hide");
+  questionsElement.removeAttribute("class");
+  timer = setInterval(clockTimer, 1000);
 
   // need to call the function for the questions
   getQuestions();
 }
 
+// here should be the function for getting the questions
 function getQuestions() {
   var currentQuestion = questions[currentQuestionIndex];
-  var titleEl = document.getElementById("question-title");
-  titleEl.textContent = currentQuestion.title;
-  choicesEl.innerHTML = "";
+  var titleElement = document.getElementById("question-title");
+  titleElement.textContent = currentQuestion.title;
+  choicesElement.innerHTML = "";
 
   // need a function to give each question the proper selection and display criteria
   currentQuestion.choices.forEach(function(selection, i) {
@@ -34,74 +35,75 @@ function getQuestions() {
     choiceQ.setAttribute("value", selection);
     choiceQ.textContent = i + 1 + ". " + selection;
     choiceQ.onclick = questionClick;
-    choicesEl.appendChild(choiceQ);
+    choicesElement.appendChild(choiceQ);
   });
 }
 
+// question functionality function
 function questionClick() {
+  // need to set a timer for incorrect answers to reduce the time by 10 seconds and give prompts for the answer they chose
   if (this.value !== questions[currentQuestionIndex].answer) {
     time -= 20;
     if (time < 0) {
       time = 0;
     }
-    timerEl.textContent = time;
-    responseEl.textContent = "Incorrect!";
+    timerElement.textContent = time;
+    responseElement.textContent = "Incorrect!";
   } else {
-    responseEl.textContent = "Correct!";
+    responseElement.textContent = "Correct!";
   }
-  responseEl.setAttribute("class", "response");
+
+  responseElement.setAttribute("class", "response");
   setTimeout(function() {
-    responseEl.setAttribute("class", "response hide");
+    responseElement.setAttribute("class", "response hide");
   }, 1000);
   currentQuestionIndex++;
+
+  // set the end of the quiz here
   if (currentQuestionIndex === questions.length) {
-    quizEnd();
+    end();
   } else {
     getQuestions();
   }
 }
 
 // needed a function for the final results being displayed along with the score
-function quizEnd() {
+function end() {
   clearInterval(timer);
-  var endScreenEl = document.getElementById("end-screen");
-  endScreenEl.removeAttribute("class");
-  var finalScoreEl = document.getElementById("your-score");
-  finalScoreEl.textContent = time;
-  questionsEl.setAttribute("class", "hide");
+  var endScreenElement = document.getElementById("end-screen");
+  endScreenElement.removeAttribute("class");
+  var finalScoreElement = document.getElementById("your-score");
+  finalScoreElement.textContent = time;
+  questionsElement.setAttribute("class", "hide");
 }
 
 // a function to set my timer and call the function if the time runs out to end the quiz
-function clockTick() {
+function clockTimer() {
   time--;
-  timerEl.textContent = time;
+  timerElement.textContent = time;
   if (time <= 0) {
-    quizEnd();
+    end();
   }
 }
 
+// A needed function to save your scores to local storage
 function saveHighscore() {
-  var initials = initialsEl.value.trim();
+  var initials = initialsElement.value.trim();
   if (initials !== "") {
     var highscores =
       JSON.parse(window.localStorage.getItem("highscores")) || [];
-    var newScore = {
+    var scores = {
       score: time,
       initials: initials
     };
 
-    highscores.push(newScore);
+    highscores.push(scores);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    // line not needed if scores are to be stored and displayed on the same page which would be logical if you hide them like the other areas on the page.
+    // Need to confirm with others to see if this is good practice for multiple pages or to have one simple page
     window.location.href = "highscorespage.html";
   }
 }
 
-function checkForEnter(event) {
-  if (event.key === "Enter") {
-    saveHighscore();
-  }
-}
-
-submitBtn.onclick = saveHighscore;
-startBtn.onclick = start;
-initialsEl.onkeyup = checkForEnter;
+submitButton.onclick = saveHighscore;
+startButton.onclick = start;
