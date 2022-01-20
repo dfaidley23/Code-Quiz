@@ -1,25 +1,17 @@
-# Code Quiz Website
+# Code Quiz
 
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+The following App was built to function as a generic Code Quiz. It was built with only a few questions to test your basic Javascript knowledge. If you answer wrong you will have time deducted from your score but this will also create a scoreboard with a list of Highscores so you can keep aiming to get them all right.
 
-## Table of Contents (Optional)
-If your README is long, add a table of contents to make it easy for users to find what they need.
-- [Installation](#installation)
+## Table of Contents
+
 - [Usage](#usage)
 - [Credits](#credits)
-- [License](#license)
+- [Tests](#tests)
 
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+In order to use the app you simply need to press the "Start Quiz" button. You will then have a timer start counting in the top right of the website. Once this reaches 0 you will fail if you haven't finished your test. If you do finish the timer will stop to show you the time it took to complete the quiz along with a score based on your questions answered correctly.
+    ![alt text](Assets/img/screenshot.jpg)
 
 ## Credits
 Credits for the help during this project go to the follwoing:
@@ -32,7 +24,13 @@ Credits for the help during this project go to the follwoing:
 - https://simplestepscode.com/javascript-quiz-tutorial/
 
 ## How to Contribute
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+If you would like to contribute to this app feel free to send me and email or pull my code and feel free to mess with it to show me where I could have improved the functionality of this app.
 
 ## Tests
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+If you would like to test for any erros just inspect the webpage and go to both console "for errors with my JS" or to the application page to see if the relevent data is stored in local storage.
+
+   Console View:
+    ![console view](Assets/img/console.jpg)
+
+   Scores in local storage:
+    ![scores](Assets/img/scores.jpg)
