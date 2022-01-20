@@ -3,6 +3,8 @@
 ## Description
 The following App was built to function as a generic Code Quiz. It was built with only a few questions to test your basic Javascript knowledge. If you answer wrong you will have time deducted from your score but this will also create a scoreboard with a list of Highscores so you can keep aiming to get them all right.
 
+Link to my Code Quiz: https://dfaidley23.github.io/Code-Quiz/
+
 ## Table of Contents
 
 - [Usage](#usage)
