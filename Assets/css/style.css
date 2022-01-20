@@ -1,7 +1,11 @@
 /* Element Selectors */
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Arial Narrow Bold', sans-serif;
   font-size: 100%;
+  margin-top: 200px;
   background-color: #cf6712;
 }
   
