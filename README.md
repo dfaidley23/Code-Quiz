@@ -13,7 +13,7 @@ Link to my Code Quiz: https://dfaidley23.github.io/Code-Quiz/
 
 ## Usage
 In order to use the app you simply need to press the "Start Quiz" button. You will then have a timer start counting in the top right of the website. Once this reaches 0 you will fail if you haven't finished your test. If you do finish the timer will stop to show you the time it took to complete the quiz along with a score based on your questions answered correctly.
-    ![alt text](Assets/img/screenshot.jpg)
+    ![page screenshot](Assets/img/screenshot.jpg)
 
 ## Credits
 Credits for the help during this project go to the follwoing:
