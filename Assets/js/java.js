@@ -101,7 +101,7 @@ function saveHighscore() {
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
     // line not needed if scores are to be stored and displayed on the same page which would be logical if you hide them like the other areas on the page.
     // Need to confirm with others to see if this is good practice for multiple pages or to have one simple page
-    window.location.href = "highscorespage.html";
+    window.location.href = "./Assets/highscorespage.html";
   }
 }
 
