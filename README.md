@@ -13,7 +13,9 @@ Link to my Code Quiz: https://dfaidley23.github.io/Code-Quiz/
 
 ## Usage
 In order to use the app you simply need to press the "Start Quiz" button. You will then have a timer start counting in the top right of the website. Once this reaches 0 you will fail if you haven't finished your test. If you do finish the timer will stop to show you the time it took to complete the quiz along with a score based on your questions answered correctly.
-    ![page screenshot](Assets/img/screenshot.jpg)
+
+Website:
+    ![page screenshot](Assets/img/Screenshot.jpg)
 
 ## Credits
 Credits for the help during this project go to the follwoing:
@@ -31,8 +33,8 @@ If you would like to contribute to this app feel free to send me and email or pu
 ## Tests
 If you would like to test for any erros just inspect the webpage and go to both console "for errors with my JS" or to the application page to see if the relevent data is stored in local storage.
 
-   Console View:
+Console View:
     ![console view](Assets/img/console.jpg)
 
-   Scores in local storage:
+Scores in local storage:
     ![scores](Assets/img/scores.jpg)
