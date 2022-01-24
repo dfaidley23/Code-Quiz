@@ -1,5 +1,4 @@
 function highscores() {
-    // will store all scores in the array as individual items
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
     // will grab each item in the array and attach it to a li item and then append that item to the parent element
     highscores.forEach(function (score) {
