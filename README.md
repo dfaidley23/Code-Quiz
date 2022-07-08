@@ -31,7 +31,7 @@ Credits for the help during this project go to the follwoing:
 If you would like to contribute to this app feel free to send me and email or pull my code and feel free to mess with it to show me where I could have improved the functionality of this app.
 
 ## Tests
-If you would like to test for any erros just inspect the webpage and go to both console "for errors with my JS" or to the application page to see if the relevent data is stored in local storage.
+If you would like to test for any errors just inspect the webpage and go to both console "for errors with my JS" or to the application page to see if the relevent data is stored in local storage.
 
 Console View:
     ![console view](Assets/img/console.jpg)
